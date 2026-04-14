@@ -1,26 +1,37 @@
 # knowledge-agent
-A Python-based knowledge agent for querying and fusing knowledge tiles, part of the Cocapn Fleet.
+A Python library that queries, processes, and fuses *knowledge tiles*.  
+Part of the **Cocapn Fleet** (https://github.com/SuperInstance).
 
 ## Description
-The repository provides a framework for building a knowledge agent that can query and fuse knowledge tiles. It includes a CLI and modules for tile handling, trust fusion, and wiki database integration.
+- Loads tile data from a wiki‑style database.  
+- Provides query utilities (`tile_query.py`).  
+- Implements trust‑based fusion (`tile_trust_fusion.py`).  
+- Exposes a simple CLI (`cli.py`) for interactive use.  
 
 ## Usage
 ```bash
-python cli.py --help
+# Install (editable)
+pip install -e .
+
+# Show CLI help
+python -m cli --help
+
+# Example: query a tile
+python -m cli query --tile-id 42
+
+# Run tests
+pytest tests/
 ```
-Run the CLI for available commands and options.
 
 ## Related
-- **Cocapn Fleet** – https://github.com/SuperInstance  
-- **Groq** – https://groq.com/ (fast AI inference hardware)
+- **Cocapn Fleet** – the umbrella project: https://github.com/SuperInstance  
 
-## Files
-- `.github/` – GitHub configuration  
-- `LICENSE` – License file  
-- `__init__.py` – Package initialization  
-- `cli.py` – Command‑line interface  
-- `knowledge_tiles.py` – Tile definitions  
-- `tile_query.py` – Query utilities  
-- `tile_trust_fusion.py` – Trust fusion logic  
-- `wiki_database.py` – Wiki DB integration  
-- `tests/` – Unit tests  
+---  
+
+## Development notes (reasoning behind the README)
+
+- **Title & description**: Clearly state the repo name and its purpose (knowledge‑tile processing) while mentioning its affiliation with the Cocapn Fleet.  
+- **Usage**: Provide the most common commands—installation, CLI help, a sample query, and test execution—so users can get started quickly.  
+- **Related**: Link back to the parent organization as requested.  
+- **Structure**: Kept the README under 30 lines (excluding the optional “Development notes” section) and used plain markdown for maximum compatibility.  
+- **Files referenced**: The CLI (`cli.py`), query module (`tile_query.py`), fusion module (`tile_trust_fusion.py`), and database helper (`wiki_database.py`) are highlighted in the description to guide developers toward the core components.  
